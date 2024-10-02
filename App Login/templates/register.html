@@ -1,0 +1,77 @@
+{% extends 'base1.html' %}
+
+
+{% block body %}
+
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+					
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+								
+							<!-- Register Content -->
+							<div class="account-content">
+								<div class="row align-items-center justify-content-center">
+									<div class="col-md-7 col-lg-6 login-left">
+										<img src="{{ url_for('static', filename='assets/img/login-banner.png') }}" class="img-fluid" alt="Doccure Register">	
+									</div>
+									<div class="col-md-12 col-lg-6 login-right">
+										<div class="login-header">
+											<h3>Register </h3>
+										</div>
+										
+						<!-- Register Form -->
+						<form method="post" action="">
+																	
+							<div class="text-right">
+								<a class="forgot-link" href="{{ url_for('Loginpage')}}">Already have an account?</a>
+							</div>
+							
+							
+							{{ form.hidden_tag() }}
+
+							<div class="form-group form-focus">
+							{{form.username (class="form-control floating")}}
+							{{form.username.label(class="focus-label")}}
+							</div>
+							<div class="form-group form-focus">
+							{{form.email(class="form-control floating")}}
+							{{form.email.label(class="focus-label")}}
+						    </div>
+							<div class="form-group form-focus">
+								{{form.password1(class="form-control floating") }}
+								{{form.password1.label(class="focus-label")}}
+								{% for error in form.password1.errors %}
+        						<li style="color:red;">{{ error }}</li>
+  								 {% endfor %}
+								</div>
+							<div class="form-group form-focus">
+							{{form.password2(class="form-control floating") }}
+							{{form.password2.label(class="focus-label")}}
+							{% for error in form.password2.errors %}
+        						<li style="color:red;">{{ error }}</li>
+  								 {% endfor %}
+							</div>
+							<div class="form-group form-focus">
+								{{form.password3(class="form-control floating") }}
+								{{form.password3.label(class="focus-label")}}
+								</div>
+							{{form.submit(class="btn btn-primary btn-block btn-lg login-btn") }}
+						</form>
+						<!-- /Register Form -->
+										
+									</div>
+								</div>
+							</div>
+							<!-- /Register Content -->
+								
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+
+{% endblock %}

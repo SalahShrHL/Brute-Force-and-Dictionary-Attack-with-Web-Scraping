@@ -1,0 +1,274 @@
+{% extends 'base2.html' %}
+
+
+{% block body %}
+
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						
+						
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<div class="appointments">
+							
+								<!-- Appointment List -->
+{% for user in users %}
+{% if user.id != u_id %}
+
+<div>
+								<div class="appointment-list">
+									
+									<div class="profile-info-widget">
+										<a  class="booking-doc-img">
+											<img src="{{ url_for('static', filename='assets/img/patients/patient.jpg') }}" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<br>
+											<h3><a >{{user.username}}</a></h3>
+											
+										</div>
+									</div>
+									<div class="appointment-action">
+										<a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details{{user.id}}">
+											<i class=""></i> Get Password
+										</a>
+
+									</div>
+								</div>
+								<!-- Appointment Details Modal -->
+								<div class="modal fade custom-modal" id="appt_details{{user.id}}">
+									<div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">Obtenir les mots de passe de {{user.username}}</h5>
+												<button type="button"  class="close" data-dismiss="modal" aria-label="Close" onclick='clear_all1();'>
+													<div aria-hidden="true">&times;</div>
+												</button>
+											</div>
+											<div class="modal-body">
+												<ul class="info-details">
+												 <br>
+													<li>
+														<div  style="float:left;"class="col-md-6">
+															<div class="text-right">
+																<button type="button" onclick='changecod1();' style="float:left;" class="btn bg-success-light btn-sm" id="topup_status">Code1</button>
+															</div>
+														
+															<span id="code1{{user.id}}"class="title1" style="display: none;float:right;" ><p>{{user.password1}}</p></span>
+														</div>
+														
+														
+													
+														
+													</li>
+													<br>
+													<br>
+
+													<hr>
+													<li>
+														<div  style="float:left;" class="col-md-6">
+															<div class="text-right">
+																<button type="button" onclick='changecod2();' style="clear:both;float:left;" class="btn bg-success-light btn-sm" id="topup_status">Code2</button>
+
+													
+															</div>
+															<span id="code2{{user.id}}" class="title2"  style="display: none;float:right;"><p>{{user.password2}}</p></span>
+														</div>
+														
+													
+														
+													</li>
+													<br>
+													<br>
+													<hr>
+													<li>
+														<div  style="float:left;"class="col-md-6">
+															<div class="text-right">
+																<button type="button" onclick='changecod3()' style="float:left;" class="btn bg-success-light btn-sm" id="topup_status">Code3</button>
+															</div>
+														
+													
+														</div>
+														<span id="code3{{user.id}}" class="title3"  style="display: none;">{{user.password3}}</span>
+													
+														
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+
+									<script>
+										function clear_all1(){
+
+											Elemntspn=document.getElementsByTagName("span")
+											for(let i=0; i<Elemntspn.length ;i++)
+											{
+												Elemntspn[i].style.display = 'none';
+											}
+										}
+									
+										
+										function show_all1(){
+
+											Elemntspn=document.getElementsByClassName("title1")
+											for(let i=0; i<Elemntspn.length ;i++)
+											{
+												Elemntspn[i].style.display = 'block';
+											}
+										}
+									
+										function changecod1() {
+									
+										
+											var ensemble1, k;
+									
+											function Afficher_Cas_possible(ensemble, k) {
+											var n;
+											n = ensemble.length;
+											new Afficher_Cas_possibleRec(ensemble, "", n, k);
+											}
+											
+											function Afficher_Cas_possibleRec(ensemble, code, n, k) {
+											var newcode;
+											
+											if (k === 0) {
+												console.log(code);
+												return;
+											}
+											
+											for (var i = 0, _pj_a = n; i < _pj_a; i += 1) {
+												newcode = code + ensemble[i];
+												new Afficher_Cas_possibleRec(ensemble, newcode, n, k - 1);
+											}
+											}
+											
+											ensemble1 = ["0", "1"];
+											k = 3;
+											new Afficher_Cas_possible(ensemble1, k);
+											
+											show_all1();
+											
+
+										}
+
+
+
+
+										function show_all2(){
+
+											Elemntspn=document.getElementsByClassName("title2")
+											for(let i=0; i<Elemntspn.length ;i++)
+											{
+												Elemntspn[i].style.display = 'block';
+											}
+										}
+									
+										function changecod2() {
+									
+										
+											var ensemble1, k;
+									
+											function Afficher_Cas_possible(ensemble, k) {
+											var n;
+											n = ensemble.length;
+											new Afficher_Cas_possibleRec(ensemble, "", n, k);
+											}
+											
+											function Afficher_Cas_possibleRec(ensemble, code, n, k) {
+											var newcode;
+											
+											if (k === 0) {
+												console.log(code);
+												return;
+											}
+											
+											for (var i = 0, _pj_a = n; i < _pj_a; i += 1) {
+												newcode = code + ensemble[i];
+												new Afficher_Cas_possibleRec(ensemble, newcode, n, k - 1);
+											}
+											}
+											
+											ensemble1 = ["0", "1", "2", "3", "4",, "5", "6", "7", "8", "9"];
+											k = 5;
+											new Afficher_Cas_possible(ensemble1, k);
+											
+											show_all2()
+										}
+
+
+
+										function show_all3(){
+
+											Elemntspn=document.getElementsByClassName("title3")
+											for(let i=0; i<Elemntspn.length ;i++)
+											{
+												Elemntspn[i].style.display = 'block';
+											}
+										}
+									
+										function changecod3() {
+									
+										
+											var ensemble1, k;
+									
+											function Afficher_Cas_possible(ensemble, k) {
+											var n;
+											n = ensemble.length;
+											new Afficher_Cas_possibleRec(ensemble, "", n, k);
+											}
+											
+											function Afficher_Cas_possibleRec(ensemble, code, n, k) {
+											var newcode;
+											
+											if (k === 0) {
+												console.log(code);
+												return;
+											}
+											
+											for (var i = 0, _pj_a = n; i < _pj_a; i += 1) {
+												newcode = code + ensemble[i];
+												new Afficher_Cas_possibleRec(ensemble, newcode, n, k - 1);
+											}
+											}
+											
+											ensemble1 = ["0", "1", "2", "3", "4",, "5", "6", "7", "8", "9",'~', ':', "'", '+', '[', '\\', '@', '^', '{', '%', '(', '-', '"', '*', '|', ',', '&', '<', '`', '}', '.', '_', '=', ']', '!', '>', ';', '?', '#', '$', ')', '/','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k',  'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't','u','v', 'w','x','y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K',  'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T','U','V', 'W','X','Y', 'Z'];
+											k = 5;
+											new Afficher_Cas_possible(ensemble1, k);
+											
+											show_all3()
+										}
+
+										
+
+									
+										
+									
+									</script>
+								</div>
+								<!-- /Appointment Details Modal -->
+		
+</div>
+
+
+
+{% endif %}
+{% endfor %}
+
+								
+
+								<!-- /Appointment List -->
+							
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>	
+	
+{% endblock %}

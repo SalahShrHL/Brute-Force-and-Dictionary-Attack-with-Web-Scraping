@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<!-- doccure/login.html  30 Nov 2019 04:12:20 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title> {{ title }} </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		
+		<!-- Favicons -->
+		<link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.png') }}" >
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/plugins/fontawesome/css/all.min.css') }}">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	
+	</head>
+	<body class="account-page">
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="index-2.html" class="menu-logo">
+								<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						<ul class="main-nav">
+							<li>
+								<a >Welcom to our webpage </a>
+							</li>
+							
+						</ul>
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>							
+							</div>
+							<div class="header-contact-detail">
+								<p class="contact-header">Contact</p>
+								<p class="contact-info-header"> +2130552510620</p>
+							</div>
+						</li>
+		
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+
+			<!-- /Header -->
+			
+            {% block body %}
+            {% endblock %}
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">Avec notre site</h2>
+									<ul>
+										<li><a ><i class="fas fa-angle-double-right"></i> </a></li>
+										<li><a ><i class="fas fa-angle-double-right"></i></a></li>
+										<li><a ><i class="fas fa-angle-double-right"></i> </a></li>
+
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+	
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-contact">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p> Chelghoum laid<br> cité 20 logts </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											+213 0552510620
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											groupssad@gmail.com
+										</p>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- /Footer Top -->
+				
+
+			</footer>
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="{{ url_for('static', filename='assets/js/popper.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+		
+		<!-- Custom JS -->
+		<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+		
+	</body>
+
+<!-- doccure/login.html  30 Nov 2019 04:12:20 GMT -->
+</html>

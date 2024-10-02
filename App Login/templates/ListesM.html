@@ -1,0 +1,81 @@
+{% extends 'base2.html' %}
+
+
+{% block body %}
+
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						
+						
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<div class="appointments">
+							
+								<!-- Appointment List -->
+								<div class="appointment-list">
+									<div class="profile-info-widget">
+										<a  class="booking-doc-img">
+											<img src="{{ url_for('static', filename='assets/img/patients/patient.jpg') }}" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<br>
+											<h3><a >Name</a></h3>
+											
+										</div>
+									</div>
+									<div class="appointment-action">
+										<a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#msnd">
+											<i class="far fa-eye"></i> Voir le message
+										</a>
+										<a href="#" class="btn btn-sm bg-success-light" data-toggle="modal" data-target="#msd">
+											<i class="fas fa-check"></i> Décripter le message
+										</a>
+										
+									</div>
+								</div>
+								<!-- /Appointment List -->
+		<!-- Message non décripter -->
+		<div class="modal fade custom-modal" id="msnd">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Message non décripter</h5>
+						
+					</div>
+					<div class="modal-body">
+						<p> le message est ceci</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Message non décripter -->
+
+		<!-- Message  décripter -->
+		<div class="modal fade custom-modal" id="msd">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Message décripter</h5>
+						
+					</div>
+					<div class="modal-body">
+						<p> le message est ceci</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Message décripter -->
+							
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+{% endblock %}
